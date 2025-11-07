@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ========== Meta ========== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WordCredit — Professional Credit Repair & Dispute Services</title>
+  <meta name="description" content="WordCredit helps you analyze, dispute, and improve your credit profile with transparent pricing, compliant methods, and concierge support." />
+  <meta name="theme-color" content="#0b1e3b" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="WordCredit — Professional Credit Repair & Dispute Services" />
+  <meta property="og:description" content="Transparent, compliant, and effective credit repair built around you." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+
+  <!-- Favicon (replace with your files when ready) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b1e3b'/%3E%3Ctext x='50' y='58' font-size='48' text-anchor='middle' fill='%23d4af37' font-family='Arial,Helvetica,sans-serif'%3EW%3C/text%3E%3C/svg%3E" />
+
+  <!-- ========== Fonts ========== -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- ========== Styles (single-file) ========== -->
+  <style>
+    :root {
+      --navy: #0b1e3b;
+      --navy-600: #122a58;
+      --navy-700: #0a1730;
+      --gold: #d4af37;
+      --gold-700: #b7912d;
+      --ink: #111827;
+      --ink-2: #374151;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --ring: rgba(212,175,55,0.35);
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --danger: #dc2626;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(1, 9, 27, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html:focus-within { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1200px, 92vw); margin-inline: auto; }
+
+    /* ===== Topbar & Navbar ===== */
+    .topbar {
+      background: var(--navy-700);
+      color: #e5e7eb;
+      font-size: 0.9rem;
+    }
+    .topbar .container { display: flex; align-items: center; justify-content: space-between; padding: .4rem 0; gap: 1rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .25rem .6rem; border-radius: 999px;
+      background: rgba(212,175,55,.12); color: var(--gold);
+      font-weight: 600; font-size: .8rem;
+    }
+
+    header.nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(160%) blur(6px);
+      background: rgba(11,30,59,0.7);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner {
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: .8rem 0;
+      color: #fff;
+    }
+    .brand {
+      display: inline-flex; gap: .6rem; align-items: center; font-weight: 800; letter-spacing: .2px;
+    }
+    .brand-logo {
+      width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--gold), #ffe18a);
+      color: var(--navy); font-weight: 900;
+      box-shadow: inset 0 0 0 2px rgba(0,0,0,.1);
+    }
+    nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; justify-content: center; }
+    nav a { color: #e5e7eb; font-weight: 600; opacity: .9; }
+    nav a:hover, nav a:focus { color: #fff; opacity: 1; text-underline-offset: 4px; text-decoration: underline; }
+
+    .cta-wrap { display: flex; justify-content: end; gap: .8rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      padding: .75rem 1rem; border-radius: 999px; font-weight: 700; border: 2px solid transparent; cursor: pointer;
+      transition: transform .05s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      will-change: transform;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn--ghost { color: #fff; border-color: rgba(255,255,255,.35); background: transparent; }
+    .btn--ghost:hover { border-color: #fff; }
+    .btn--gold { background: var(--gold); color: var(--navy-700); }
+    .btn--gold:hover { background: var(--gold-700); color: #0a1224; }
+
+    /* ===== Hero ===== */
+    .hero {
+      background:
+        radial-gradient(1200px 400px at 50% -100px, rgba(212,175,55,.12), transparent 70%),
+        linear-gradient(180deg, var(--navy) 0%, #0e2346 50%, #0b1e3b 100%);
+      color: #fff;
+      padding: 64px 0 48px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center;
+    }
+    .eyebrow { color: #cbd5e1; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; font-size: .8rem; }
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 700; line-height: 1.1; margin: 10px 0 16px; letter-spacing: .2px; font-size: clamp(2rem, 3.6vw, 3rem);
+    }
+    .hero p.lead { color: #e5e7eb; font-size: 1.1rem; max-width: 60ch; }
+    .hero .actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 18px; }
+    .hero-card {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+      padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .hero-card ul { margin: 0; padding-left: 1rem; color: #e5e7eb; }
+    .stamp {
+      display: inline-flex; align-items: center; gap: .5rem; margin-top: 14px;
+      background: #0c2a4f; border: 1px dashed rgba(212,175,55,.6); color: #f8fafc;
+      border-radius: 999px; padding: .3rem .6rem; font-weight: 700; font-size: .85rem;
+    }
+
+    /* ===== Sections ===== */
+    section { padding: 70px 0; }
+    .section-title {
+      font-family: "Playfair Display", serif; font-weight: 700; font-size: clamp(1.4rem, 2.2vw, 2rem);
+      margin: 0 0 8px; color: var(--navy);
+    }
+    .section-sub { margin: 0 0 28px; color: var(--muted); max-width: 70ch; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card {
+      background: var(--card); border: 1px solid #e5e7eb; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow);
+    }
+    .card h3 { margin: 0 0 6px; }
+    .kpi { font-size: 2rem; font-weight: 800; color: var(--navy); }
+    .muted { color: var(--muted); }
+
+    /* ===== Pricing ===== */
+    .pricing { background: linear-gradient(180deg, #fff, #f3f4f6); }
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
+    .price { position: relative; padding: 28px; border-radius: var(--radius); background: #ffffff; border: 1px solid #e5e7eb; box-shadow: var(--shadow); }
+    .price--focus { outline: 3px solid var(--ring); border-color: var(--gold); }
+    .price h3 { margin: 0 0 6px; }
+    .tag { display: inline-block; background: rgba(212,175,55,.14); color: var(--gold); padding: .2rem .6rem; border-radius: 999px; font-weight: 700; font-size: .8rem; }
+    .figure { font-size: 2.1rem; font-weight: 900; color: var(--navy); margin: 10px 0; }
+    .price ul { margin: 0 0 14px; padding-left: 1.1rem; color: var(--ink-2); }
+    .price .btn { width: 100%; }
+
+    /* ===== FAQ (pure CSS details/summary) ===== */
+    .faq details {
+      border: 1px solid #e5e7eb; border-radius: var(--radius); background: #fff; padding: 16px 18px; box-shadow: var(--shadow);
+    }
+    .faq details + details { margin-top: 12px; }
+    .faq summary { cursor: pointer; font-weight: 700; color: var(--navy); }
+    .faq p { margin: 10px 0 0; color: var(--ink-2); }
+
+    /* ===== Contact ===== */
+    .contact { background: #ffffff; }
+    .form {
+      display: grid; gap: 14px; grid-template-columns: 1fr 1fr;
+    }
+    .form .full { grid-column: 1 / -1; }
+    label { display: block; font-weight: 600; color: var(--ink-2); margin-bottom: 6px; }
+    input, select, textarea {
+      width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid #d1d5db; font: inherit; background: #fff;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold); outline: none; box-shadow: 0 0 0 4px var(--ring);
+    }
+
+    /* ===== Footer ===== */
+    footer { background: var(--navy-700); color: #cbd5e1; padding: 30px 0; }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: center; }
+    .legal small { display: block; color: #aeb7c5; }
+
+    /* ===== Utilities ===== */
+    .shield { display: inline-flex; gap: .5rem; align-items: center; background: #f1f5f9; border: 1px solid #e5e7eb; border-radius: 12px; padding: .5rem .7rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .chip { background: #f1f5f9; border: 1px solid #e5e7eb; border-radius: 999px; padding: .3rem .6rem; font-weight: 600; color: var(--ink-2); }
+    .center { text-align: center; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1000px){
+      .hero-grid, .grid-3, .price-grid, .footer-grid { grid-template-columns: 1fr; }
+      .cta-wrap { justify-content: flex-start; }
+    }
+  </style>
+
+  <!-- ========== Schema (edit fields for your business) ========== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"WordCredit",
+    "description":"Professional credit repair and credit report dispute services.",
+    "url":"https://example.com/",
+    "telephone":"+1-555-0100",
+    "areaServed":"US",
+    "sameAs":[],
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Your City",
+      "addressRegion":"TX",
+      "postalCode":"00000",
+      "streetAddress":"8500 Harwood Rd"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <a href="#main" class="visually-hidden">Skip to content</a>
+
+  <!-- ===== Topbar ===== -->
+  <div class="topbar" role="region" aria-label="Top information bar">
+    <div class="container">
+      <div class="chips" aria-label="Highlights">
+        <span class="chip">No false promises</span>
+        <span class="chip">CROA & FCRA compliant</span>
+        <span class="chip">Transparent pricing</span>
+      </div>
+      <span class="badge" aria-label="Secure Site">✓ Secure Client Portal</span>
+    </div>
+  </div>
+
+  <!-- ===== Nav ===== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#" aria-label="WordCredit home">
+        <span class="brand-logo" aria-hidden="true">W</span>
+        <span>WordCredit</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cta-wrap">
+        <a class="btn btn--ghost" href="#contact">Free Consult</a>
+        <a class="btn btn--gold" href="#pricing">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" role="region" aria-label="Hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Professional Credit Repair</div>
+        <h1>Clean, Accurate, and Compliant Credit—Handled With Class.</h1>
+        <p class="lead">
+          WordCredit analyzes your reports, drafts compliant disputes, and tracks responses—so you can move forward with confidence.
+        </p>
+        <div class="actions">
+          <a class="btn btn--gold" href="#pricing" aria-label="View pricing and start">See Plans</a>
+          <a class="btn btn--ghost" href="#services" aria-label="View services">How it Works</a>
+        </div>
+        <div class="stamp" aria-label="Satisfaction note">No gimmicks • No scare tactics • Just results & respect</div>
+      </div>
+
+      <div class="hero-card" aria-label="Trust indicators">
+        <div class="shield">🔒 Encrypted intake & document vault</div>
+        <ul>
+          <li>Personalized audit with action plan</li>
+          <li>Targeted dispute rounds with tracking</li>
+          <li>Score-building guidance & habit coaching</li>
+          <li>Weekly status updates in plain English</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- ===== Services ===== -->
+    <section id="services" aria-labelledby="services-title">
+      <div class="container">
+        <h2 class="section-title" id="services-title">What We Do</h2>
+        <p class="section-sub">Strategic, ethical, and fully documented credit improvement tailored to your goals.</p>
+
+        <div class="grid-3">
+          <article class="card" aria-label="Full Credit Audit">
+            <h3>Full Credit Audit</h3>
+            <p class="muted">Tri-bureau review (Experian, Equifax, TransUnion), inaccuracies flagged, and a prioritized roadmap.</p>
+          </article>
+          <article class="card" aria-label="Targeted Disputes">
+            <h3>Targeted Disputes</h3>
+            <p class="muted">Custom dispute letters citing relevant provisions; timelines tracked until resolution.</p>
+          </article>
+          <article class="card" aria-label="Score Building">
+            <h3>Score Building</h3>
+            <p class="muted">Utilization, mix, age, and inquiry strategy—plus optional creditor goodwill outreach.</p>
+          </article>
+        </div>
+
+        <div class="grid-3" style="margin-top:18px">
+          <article class="card" aria-label="Identity Theft Support">
+            <h3>Identity Theft Support</h3>
+            <p class="muted">Victim statement, police/FTC filings packet, blocking & expedited reinvestigation guidance.</p>
+          </article>
+          <article class="card" aria-label="Data Updates">
+            <h3>Data Updates</h3>
+            <p class="muted">Name/alias, address, employment corrections to reduce false matches and reinsertions.</p>
+          </article>
+          <article class="card" aria-label="Mortgage & Auto Prep">
+            <h3>Mortgage &amp; Auto Prep</h3>
+            <p class="muted">Underwriting-friendly documentation and timelines aligned to your purchase window.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Metrics / Social Proof ===== -->
+    <section aria-label="Results">
+      <div class="container grid-3">
+        <div class="card center">
+          <div class="kpi">1,000+</div>
+          <div class="muted">Issues resolved</div>
+        </div>
+        <div class="card center">
+          <div class="kpi">4.9★</div>
+          <div class="muted">Client rating</div>
+        </div>
+        <div class="card center">
+          <div class="kpi">48–90d</div>
+          <div class="muted">Typical first results window</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pricing ===== -->
+    <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <h2 class="section-title" id="pricing-title">Simple, Transparent Pricing</h2>
+        <p class="section-sub">Start with a deep-dive audit, then choose the month-to-month plan that fits. Cancel anytime.</p>
+
+        <div class="price-grid">
+          <article class="price" aria-label="Audit">
+            <span class="tag">Start Here</span>
+            <h3>Comprehensive Audit</h3>
+            <p class="figure">$149 one-time</p>
+            <ul>
+              <li>Tri-bureau report analysis</li>
+              <li>Itemized issue list & priority map</li>
+              <li>Personalized 90-day plan</li>
+            </ul>
+            <button class="btn btn--gold">Book Audit</button>
+          </article>
+
+          <article class="price price--focus" aria-label="Standard plan">
+            <span class="tag">Most Popular</span>
+            <h3>Standard</h3>
+            <p class="figure">$99 / month</p>
+            <ul>
+              <li>Up to 15 items monitored</li>
+              <li>2 dispute rounds / month</li>
+              <li>Weekly status updates</li>
+            </ul>
+            <button class="btn btn--gold">Start Standard</button>
+          </article>
+
+          <article class="price" aria-label="Premium plan">
+            <span class="tag">Concierge</span>
+            <h3>Premium</h3>
+            <p class="figure">$159 / month</p>
+            <ul>
+              <li>Unlimited monitored items</li>
+              <li>Expedited dispute drafting</li>
+              <li>1:1 advisor & lender prep</li>
+            </ul>
+            <button class="btn btn--gold">Start Premium</button>
+          </article>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          * No guarantee of specific score outcomes. Timelines vary by bureau, furnisher response, and case complexity.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 class="section-title" id="faq-title">Common Questions</h2>
+        <p class="section-sub">Plain-English answers to help you feel confident from day one.</p>
+
+        <details>
+          <summary>Is credit repair legal?</summary>
+          <p>Yes—when done ethically and in compliance with the Fair Credit Reporting Act (FCRA) and the Credit Repair Organizations Act (CROA). We only pursue factual inaccuracies and fair reporting.</p>
+        </details>
+        <details>
+          <summary>How long until I see changes?</summary>
+          <p>Many clients see movement within 45–90 days. Complex items (e.g., bankruptcies) can take several months. We keep you informed every step of the way.</p>
+        </details>
+        <details>
+          <summary>Can you remove accurate negative items?</summary>
+          <p>No. We do not remove accurate, verifiable information. Our job is to correct errors and ensure full compliance with reporting standards.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title" id="contact-title">Request Your Free Consult</h2>
+        <p class="section-sub">Tell us about your goals. We’ll review your situation and map out next steps—no pressure.</p>
+
+        <form class="form" method="post" action="#" onsubmit="event.preventDefault(); alert('Thanks! We will reach out shortly.');">
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+          <div>
+            <label for="goal">Primary Goal</label>
+            <select id="goal" name="goal">
+              <option value="mortgage">Get mortgage-ready</option>
+              <option value="auto">Improve for auto approval</option>
+              <option value="cleanup">General cleanup</option>
+              <option value="identity">Identity theft support</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="message">What should we know?</label>
+            <textarea id="message" name="message" rows="5" placeholder="Give us a quick snapshot."></textarea>
+          </div>
+          <div class="full">
+            <button class="btn btn--gold" type="submit">Send Request</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" aria-label="WordCredit">
+          <span class="brand-logo" aria-hidden="true">W</span>
+          <strong>WordCredit</strong>
+        </div>
+        <div class="legal" style="margin-top:8px">
+          <small>© <span id="year"></span> WordCredit. All rights reserved.</small>
+          <small>WordCredit is a professional service. We do not provide legal or financial advice.</small>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">Privacy</span>
+        <span class="chip">Terms</span>
+        <span class="chip">Compliance</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== Minimal Script (in-file only) ========== -->
+  <script>
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
