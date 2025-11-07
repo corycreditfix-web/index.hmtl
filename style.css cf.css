@@ -1,0 +1,175 @@
+/* ===============================
+   Credit Fix — Global Styles (Navy, Gold, White)
+   File: style.css
+   =============================== */
+:root{
+  --navy:#0b1f3a;
+  --gold:#d4af37;
+  --ink:#0e1420;
+  --bg:#f9fbff;
+  --white:#ffffff;
+  --muted:#6a768a;
+  --success:#2fbf71;
+  --danger:#f44336;
+  --radius:1.25rem;
+  --shadow:0 10px 30px rgba(11,31,58,.15);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg, var(--bg), #eef3ff);
+  line-height:1.6;
+}
+
+/* Layout helpers */
+.container{
+  width:min(1100px, 92%);
+  margin-inline:auto;
+  padding:2rem 0;
+}
+
+.card{
+  background:var(--white);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:1.5rem;
+  border:1px solid rgba(11,31,58,.06);
+}
+
+.header{
+  background:linear-gradient(135deg, var(--navy), #132d57);
+  color:var(--white);
+  padding:2.25rem 0 3rem;
+  position:relative;
+  overflow:hidden;
+}
+.header::after{
+  content:"";
+  position:absolute;
+  inset:auto -10% -20% -10%;
+  height:250px;
+  background:radial-gradient(60% 60% at 50% 0%, rgba(212,175,55,.25), transparent 60%);
+  pointer-events:none;
+}
+
+.brand{
+  display:flex; align-items:center; gap:.85rem;
+}
+.brand__logo{
+  width:44px; height:44px; border-radius:12px;
+  background:var(--gold); color:var(--navy);
+  display:grid; place-items:center;
+  font-weight:800;
+  box-shadow:inset 0 0 0 3px rgba(255,255,255,.55), 0 6px 18px rgba(0,0,0,.2);
+}
+.brand__name{
+  font-size:1.25rem; font-weight:700; letter-spacing:.2px;
+}
+
+.h1{
+  font-size:clamp(1.8rem, 3.5vw + .5rem, 3rem);
+  margin:.75rem 0 0;
+  line-height:1.15;
+}
+.lead{
+  color:#e7ecf7;
+  max-width:60ch;
+  margin:.75rem 0 0;
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:.5rem;
+  padding:.85rem 1.15rem;
+  border-radius:999px;
+  border:2px solid transparent;
+  font-weight:700; letter-spacing:.2px;
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+  user-select:none;
+}
+.btn:active{ transform:translateY(1px) scale(.99); }
+
+.btn--gold{
+  background:var(--gold); color:var(--navy);
+  box-shadow:0 8px 18px rgba(212,175,55,.35);
+}
+.btn--gold:hover{ filter:brightness(1.07); }
+
+.btn--outline{
+  background:transparent; color:#e9efff; border-color:rgba(255,255,255,.5);
+}
+.btn--outline:hover{ background:rgba(255,255,255,.08); }
+
+/* Badges / chips */
+.badge{
+  display:inline-block; padding:.35rem .6rem;
+  border-radius:999px; font-size:.8rem; font-weight:700;
+  background:rgba(212,175,55,.12); color:var(--gold);
+  border:1px dashed rgba(212,175,55,.5);
+}
+
+/* Sections */
+.section{ padding:3rem 0; }
+
+.grid{
+  display:grid; gap:1.25rem;
+  grid-template-columns:repeat(12, 1fr);
+}
+.col-12{ grid-column:span 12; }
+@media (min-width: 800px){
+  .col-6{ grid-column:span 6; }
+  .col-4{ grid-column:span 4; }
+}
+
+/* Fancy headline underline */
+.underline{
+  position:relative; display:inline-block; padding-bottom:.35rem;
+}
+.underline::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:6px;
+  background:linear-gradient(90deg, var(--gold), rgba(212,175,55,.15));
+  border-radius:6px;
+}
+
+/* CTA ribbon */
+.ribbon{
+  display:flex; flex-wrap:wrap; gap:.75rem; align-items:center;
+  background:linear-gradient(90deg, rgba(255,255,255,.15), rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.2);
+  padding:1rem 1.25rem;
+  border-radius:999px;
+  backdrop-filter: blur(8px);
+}
+
+/* Animations */
+.reveal{ opacity:0; transform:translateY(12px); }
+.reveal.is-visible{ opacity:1; transform:none; transition: all .6s cubic-bezier(.2,.65,.2,1); }
+
+@keyframes wiggle {
+  0%{ transform:rotate(0deg); }
+  25%{ transform:rotate(-2deg) translateY(-1px); }
+  50%{ transform:rotate(2deg) translateY(1px); }
+  100%{ transform:rotate(0deg); }
+}
+.wiggle{ animation: wiggle .9s ease-in-out; }
+
+/* Download link look */
+.downloads a{
+  display:inline-block;
+  padding:.8rem 1.1rem;
+  margin:.35rem .35rem 0 0;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  color:var(--white);
+  background:var(--navy);
+  outline:2px solid var(--gold);
+  box-shadow:0 8px 18px rgba(11,31,58,.25);
+}
+.downloads a:hover{ filter:brightness(1.08); }
