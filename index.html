@@ -488,5 +488,32 @@
     // Current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-</body>
+ <!-- ===== Footer (paste this directly ABOVE the closing </body> tag) ===== -->
+<footer id="site-footer" role="contentinfo">
+  <hr>
+  <p><strong>Stayton Credit Repair</strong></p>
+
+  <!-- Click-to-call and click-to-email -->
+  <p>
+    <a href="tel:+18175550123" aria-label="Call Stayton Credit Repair">(817) 555-0123</a>
+    &nbsp;•&nbsp;
+    <a href="mailto:staytoncreditrepair@gmail.com" aria-label="Email Stayton Credit Repair">
+      staytoncreditrepair@gmail.com
+    </a>
+  </p>
+
+  <!-- Copyright with auto year -->
+  <p>© <span id="current-year"></span> Stayton Credit Repair. All rights reserved.</p>
+</footer>
+
+<script>
+  // Auto-update year
+  (function () {
+    var el = document.getElementById('current-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+<!-- ===== End Footer ===== -->
+
+ </body>
 </html>
